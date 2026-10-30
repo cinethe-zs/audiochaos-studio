@@ -1,0 +1,4 @@
+/target
+/renders
+# Tracks belong to their authors and stay out of the repository.
+/tracks

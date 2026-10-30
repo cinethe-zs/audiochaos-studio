@@ -1,0 +1,21 @@
+[package]
+name = "audiochaos-studio"
+version = "0.1.0"
+edition = "2024"
+
+[[bin]]
+name = "studio"
+path = "src/main.rs"
+
+[features]
+# Loudness, mastering, MP3 and spectrograms in Rust, for a machine without the
+# ffmpeg program: cargo build --release --features native
+native = ["dep:ebur128", "dep:rusty_mp3"]
+
+[dependencies]
+# Pinned to the commit the studio is built and tested against.
+audiochaos = { git = "https://github.com/cscdpn/audiochaos", rev = "ac85ad65fab066fb586650b60e090900723eaa5e" }
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.154"
+ebur128 = { version = "0.1.10", optional = true }
+rusty_mp3 = { version = "0.7.0", optional = true }

@@ -1,0 +1,5 @@
+[alias]
+# cargo studio build <name>
+studio = "run --release --quiet --bin studio --"
+# The same without ffmpeg.
+studio-native = "run --release --quiet --features native --bin studio --"
